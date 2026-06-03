@@ -1,0 +1,32 @@
+# ===== Godot 4+ engine =====
+.godot/
+/android/
+
+# Export outputs
+/builds/
+/export/
+export.cfg
+export_presets.cfg
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== Editor / IDE =====
+*.tmp
+*.bak
+*.swp
+.vscode/
+.idea/
+
+# ===== License-restricted third-party assets =====
+# craftpix.net 免费包不允许再分发原始资源
+Assets/craftpix-net-506778-free-vampire-pixel-art-sprite-sheets/
+Assets/house/
+
+# ===== Plugin 示例工程 (非本项目代码) =====
+godot_state_charts_examples/
+
+# ===== Local temp =====
+temp_unpack/

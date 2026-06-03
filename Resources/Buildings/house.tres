@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3 uid="uid://bmoo5tvacu1kv"]
+
+[ext_resource type="Script" uid="uid://bmag6n8dbq61j" path="res://Scripts/Systems/Building/BuildingDefinition.gd" id="1_definition_script"]
+[ext_resource type="Texture2D" uid="uid://cgi82sxx6t0q" path="res://Assets/house/1 Ad/64x64/1.png" id="2_house_texture"]
+
+[resource]
+script = ExtResource("1_definition_script")
+building_id = &"house"
+display_name = "House"
+texture = ExtResource("2_house_texture")
+footprint = Vector2i(8, 8)
