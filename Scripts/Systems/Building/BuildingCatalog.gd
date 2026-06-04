@@ -1,7 +1,9 @@
 class_name BuildingCatalog
 extends Node
 
-@export var definitions: Array[Resource] = []
+signal selected_definition_changed(definition: BuildingDefinition)
+
+@export var definitions: Array[BuildingDefinition] = []
 @export var selected_index: int = 0
 
 func get_selected_definition() -> BuildingDefinition:
@@ -26,12 +28,21 @@ func get_definition_by_id(building_id: StringName) -> BuildingDefinition:
 	return null
 
 
+func select_definition_by_id(building_id: StringName) -> bool:
+	var valid_definitions := get_valid_definitions()
+
+	for index in range(valid_definitions.size()):
+		if valid_definitions[index].building_id == building_id:
+			selected_index = index
+			selected_definition_changed.emit(valid_definitions[index])
+			return true
+
+	return false
+
+
 func get_valid_definitions() -> Array[BuildingDefinition]:
 	var valid_definitions: Array[BuildingDefinition] = []
-
-	for resource in definitions:
-		var definition := resource as BuildingDefinition
+	for definition in definitions:
 		if definition != null and definition.is_valid():
 			valid_definitions.append(definition)
-
 	return valid_definitions

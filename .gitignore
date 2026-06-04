@@ -30,3 +30,7 @@ godot_state_charts_examples/
 
 # ===== Local temp =====
 temp_unpack/
+
+# ===== Session state (ephemeral, not for review) =====
+production/session-state/
+production/session-logs/

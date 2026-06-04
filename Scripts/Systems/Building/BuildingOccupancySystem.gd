@@ -14,21 +14,21 @@ func can_occupy(origin_cell: Vector2i, footprint: Vector2i) -> bool:
 	return true
 
 
-func occupy(owner: Node, origin_cell: Vector2i, footprint: Vector2i) -> bool:
-	if owner == null or not can_occupy(origin_cell, footprint):
+func occupy(occupant: Node, origin_cell: Vector2i, footprint: Vector2i) -> bool:
+	if occupant == null or not can_occupy(origin_cell, footprint):
 		return false
 
 	for cell in get_footprint_cells(origin_cell, footprint):
-		occupied_cells[cell] = owner
+		occupied_cells[cell] = occupant
 
 	return true
 
 
-func release(owner: Node) -> void:
+func release(occupant: Node) -> void:
 	var cells_to_release: Array[Vector2i] = []
 
 	for cell in occupied_cells:
-		if occupied_cells[cell] == owner:
+		if occupied_cells[cell] == occupant:
 			cells_to_release.append(cell)
 
 	for cell in cells_to_release:

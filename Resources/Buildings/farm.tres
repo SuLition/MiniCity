@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" uid="uid://bmag6n8dbq61j" path="res://Scripts/Systems/Building/BuildingDefinition.gd" id="1_definition_script"]
+[ext_resource type="Texture2D" uid="uid://b5bojf5ba6jf4" path="res://Assets/Tiles/tile_grass_dirt.png" id="2_farm_texture"]
+
+[resource]
+script = ExtResource("1_definition_script")
+building_id = &"farm"
+display_name = "Farm"
+texture = ExtResource("2_farm_texture")
+footprint = Vector2i(3, 2)
+visual_size = Vector2(24, 16)
+build_cost = {
+&"wood": 12,
+&"stone": 4
+}
+build_work_required = 20
+max_workers = 2
+production_per_day = {
+&"food": 6
+}

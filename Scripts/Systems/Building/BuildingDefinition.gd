@@ -7,6 +7,10 @@ extends Resource
 @export var footprint: Vector2i = Vector2i.ONE
 @export var visual_size: Vector2 = Vector2(64.0, 64.0)
 @export var visual_offset: Vector2 = Vector2.ZERO
+@export var build_cost: Dictionary = {}
+@export var build_work_required: int = 0
+@export var max_workers: int = 0
+@export var production_per_day: Dictionary = {}
 
 func is_valid() -> bool:
 	return (
@@ -16,6 +20,8 @@ func is_valid() -> bool:
 		and footprint.y > 0
 		and visual_size.x > 0.0
 		and visual_size.y > 0.0
+		and build_work_required >= 0
+		and max_workers >= 0
 	)
 
 

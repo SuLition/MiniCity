@@ -82,3 +82,38 @@ text = "Water 20"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Cloth/Leather 5"
+
+[node name="BuildMenuPanel" type="PanelContainer" parent="Root"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 184.0
+offset_right = 244.0
+offset_bottom = 292.0
+
+[node name="BuildMenuMargin" type="MarginContainer" parent="Root/BuildMenuPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="BuildMenuStack" type="VBoxContainer" parent="Root/BuildMenuPanel/BuildMenuMargin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BuildMenuTitle" type="Label" parent="Root/BuildMenuPanel/BuildMenuMargin/BuildMenuStack"]
+layout_mode = 2
+text = "\u5efa\u9020"
+
+[node name="FarmButton" type="Button" parent="Root/BuildMenuPanel/BuildMenuMargin/BuildMenuStack"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Farm"
+
+[node name="SelectedBuildingLabel" type="Label" parent="Root/BuildMenuPanel/BuildMenuMargin/BuildMenuStack"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "\u672a\u9009\u62e9"

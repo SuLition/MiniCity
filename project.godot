@@ -11,14 +11,22 @@ config_version=5
 [application]
 
 config/name="MiniCity"
-run/main_scene="res://Scenes/Main/main.tscn"
+run/main_scene="uid://cofkty0skp7tm"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
+WorldState="*res://Scripts/Systems/WorldState.gd"
+ResourceManager="*res://Scripts/Systems/Resources/ResourceManager.gd"
+TimeManager="*res://Scripts/Systems/Time/TimeManager.gd"
 DialogueManager="*uid://c3rodes2l3gxb"
 PhantomCameraManager="*uid://duq6jhf6unyis"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [editor_plugins]
 
