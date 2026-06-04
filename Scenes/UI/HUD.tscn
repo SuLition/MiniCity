@@ -1,0 +1,84 @@
+[gd_scene load_steps=2 format=4]
+
+[ext_resource type="Script" path="res://Scripts/UI/HUDController.gd" id="1_hud"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hud")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 416.0
+offset_bottom = 170.0
+
+[node name="Margin" type="MarginContainer" parent="Root/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="Stack" type="VBoxContainer" parent="Root/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TimeRow" type="HBoxContainer" parent="Root/Panel/Margin/Stack"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="DayLabel" type="Label" parent="Root/Panel/Margin/Stack/TimeRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Day 1"
+
+[node name="TimeLabel" type="Label" parent="Root/Panel/Margin/Stack/TimeRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "12:00"
+
+[node name="PhaseLabel" type="Label" parent="Root/Panel/Margin/Stack/TimeRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Day"
+
+[node name="ResourceGrid" type="GridContainer" parent="Root/Panel/Margin/Stack"]
+layout_mode = 2
+columns = 3
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 6
+
+[node name="WoodLabel" type="Label" parent="Root/Panel/Margin/Stack/ResourceGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Wood 30"
+
+[node name="StoneLabel" type="Label" parent="Root/Panel/Margin/Stack/ResourceGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Stone 20"
+
+[node name="FoodLabel" type="Label" parent="Root/Panel/Margin/Stack/ResourceGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Food 20"
+
+[node name="WaterLabel" type="Label" parent="Root/Panel/Margin/Stack/ResourceGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Water 20"
+
+[node name="ClothLeatherLabel" type="Label" parent="Root/Panel/Margin/Stack/ResourceGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Cloth/Leather 5"

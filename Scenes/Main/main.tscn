@@ -11,6 +11,10 @@
 [ext_resource type="Script" uid="uid://c642cfsw1do61" path="res://Scripts/Systems/Building/BuildingCatalog.gd" id="9_catalog"]
 [ext_resource type="Script" uid="uid://dld2sma2d0tfs" path="res://Scripts/Systems/Building/BuildingOccupancySystem.gd" id="10_occupancy"]
 [ext_resource type="Resource" uid="uid://bmoo5tvacu1kv" path="res://Resources/Buildings/house.tres" id="11_house_definition"]
+[ext_resource type="Script" path="res://Scripts/Systems/WorldState.gd" id="15_world_state"]
+[ext_resource type="Script" path="res://Scripts/Systems/Resources/ResourceManager.gd" id="16_resource_manager"]
+[ext_resource type="Script" path="res://Scripts/Systems/Time/TimeManager.gd" id="17_time_manager"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/HUD.tscn" id="18_hud"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkfd5"]
 texture = ExtResource("2_vxhiv")
@@ -767,6 +771,22 @@ terrain_layer_path = NodePath("../TerrainLayer")
 catalog_path = NodePath("../BuildingCatalog")
 occupancy_system_path = NodePath("../BuildingOccupancySystem")
 building_root_path = NodePath("../BuildingRoot")
+
+[node name="WorldState" type="Node" parent="." unique_id=1930186501]
+script = ExtResource("15_world_state")
+
+[node name="ResourceManager" type="Node" parent="." unique_id=604928133]
+script = ExtResource("16_resource_manager")
+world_state_path = NodePath("../WorldState")
+
+[node name="TimeManager" type="Node" parent="." unique_id=1829374560]
+script = ExtResource("17_time_manager")
+world_state_path = NodePath("../WorldState")
+seconds_per_day = 24.0
+start_hour = 12.0
+
+[node name="HUD" parent="." instance=ExtResource("18_hud")]
+world_state_path = NodePath("../WorldState")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=469414037]
 position = Vector2(150, 594)
